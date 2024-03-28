@@ -1,0 +1,232 @@
+site_name: CMS DAQ Containers Workshop
+site_description: CMS DAQ Containers Workshop
+site_author: CMS DAQ
+site_url: https://cms-daq-containers-workshop.docs.cern.ch/
+
+repo_name: Containers Workshop
+repo_url: https://gitlab.cern.ch/cms-daq-sysadmins/containers-workshop
+edit_uri: 'blob/master/docs'
+
+theme:
+  name: material
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+
+plugins:
+  - search
+
+nav:
+    - Introduction: index.md
+    - 'Docker':
+      - 'Prerequisites': docker/00-prerequisites/README.md
+      - 'Getting Started': docker/01-getting-started/README.md
+      - 'Docker Run Under the Hood': docker/02-docker-run-under-the-hood/README.md
+      - 'Listing Docker Containers': docker/03-listing-docker-containers/README.md
+      - 'Executing Commands in Running Container': 'docker/04-docker-exec/README.md'
+      - 'Processes':
+        - 'Listing Processes': docker/05-processes/listing-processes.md
+        - 'PID 1': docker/05-processes/pid1.md
+      - 'Images':
+        - 'Getting Started': docker/06-images/getting-started.md
+        - 'Layers': docker/06-images/layers.md
+        - 'OCI': docker/06-images/OCI.md
+      - 'Docker Build':
+        - 'Dockerfile':
+          - 'Getting started': docker/07-build/dockerfile/getting-started.md
+          - 'Simple Build - Debian-based': docker/07-build/dockerfile/debian-based.md
+          - 'Simple Build - Alpine-based': docker/07-build/dockerfile/alpine-based.md
+          - 'Multi-stage Builds': docker/07-build/dockerfile/multi-stage-builds.md
+          - 'Best Practices': docker/07-build/dockerfile/best-practices.md
+        - 'Cache': docker/07-build/cache.md
+      - 'Environment Variables and Build Arguments':
+        - 'Getting started': docker/08-env-and-arg/getting-started.md
+        - 'Build Arguments': docker/08-env-and-arg/build-args.md
+        - 'Environment Variables': docker/08-env-and-arg/env-variables.md
+      - 'Container Logs': docker/09-logs/README.md
+      - 'Networking':
+        - 'Drivers':
+          - 'Overview': docker/10-networking/drivers/README.md
+          - 'Bridge': docker/10-networking/drivers/bridge.md
+          - 'Host': docker/10-networking/drivers/host.md
+        - 'Container Networking': docker/10-networking/container-networking.md
+        - 'Common Docker Network Commands': docker/10-networking/commands.md
+        - 'Bridge Connection Breakdown': docker/10-networking/bridge-connection/README.md
+      - 'Storage':
+        - 'Overview': docker/11-storage/overview.md
+        - 'Volumes': docker/11-storage/volumes.md
+        - 'Bind Mount': docker/11-storage/bind-mount.md
+        - 'Copying files': docker/11-storage/copy.md
+      - 'Pausing Processes': docker/12-pause-processes/README.md
+      - 'Container Lifecycle': docker/13-container-lifecycle/README.md
+      - 'Example Development Flow': docker/14-example-development-flow/README.md
+      - 'Docker Compose': docker/90-docker-compose/README.md
+      - 'Extra':
+        - 'Linux':
+          - 'Overview': docker/100-extra/linux/overview.md
+          - 'Namespaces': docker/100-extra/linux/namespaces.md
+          - 'Cgroups': docker/100-extra/linux/cgroups.md
+          - 'Capabilities': docker/100-extra/linux/capabilities.md
+        - 'Image Distribution and Registries': docker/100-extra/image-distribution-and-registries/README.md
+        - 'Facts': docker/100-extra/facts/README.md
+        - 'Resources': docker/100-extra/resources/README.md
+    - 'Kubernetes':
+      - 'Prerequisites': kubernetes/00-prerequisites/README.md
+      - 'Cluster Creation': kubernetes/01-cluster-creation/README.md
+      - 'Kubeconfig': kubernetes/000-kubeconfig/README.md
+      - 'Kubernetes Client': kubernetes/00-kubectl/README.md
+      - 'Objects':
+        - 'Getting started': kubernetes/000-objects/getting-started.md
+        - 'Names and IDs': kubernetes/000-objects/names-and-ids.md
+        - 'Labels and Selectors': kubernetes/000-objects/labels-and-selectors.md
+        - 'Annotations': kubernetes/000-objects/annotations.md
+        - 'Namespaces': kubernetes/000-objects/namespaces.md
+        - 'Recommended Labels': kubernetes/000-objects/recommended-labels.md
+      - 'Pods':
+        - 'Getting Started': kubernetes/000-pods/getting-started.md
+        - 'Pod with one Container': kubernetes/000-pods/one-container.md
+        - 'Pod with multiple Containers':
+          - 'Getting started': kubernetes/000-pods/multiple-containers-01.md
+          - 'Shared Volume Example': kubernetes/000-pods/multiple-containers-02.md
+        - 'Pod Lifecycle':
+          - 'Getting started': kubernetes/000-pods/lifecycle.md
+          - 'Configure':
+            - 'Restart Policy': kubernetes/000-pods/tasks/restart-policy.md
+        - 'Probes':
+          - 'Getting started': kubernetes/000-pods/probes/getting-started.md
+          - 'Best Practices': kubernetes/000-pods/probes/best-practices.md
+          - 'Configure': kubernetes/000-pods/tasks/probes.md
+        - 'Init Containers':
+          - 'Getting started': kubernetes/000-pods/init-containers.md
+          - 'Configure': kubernetes/000-pods/tasks/init-containers.md
+        - 'Logs': kubernetes/000-pods/logs.md
+        - 'Get a Shell to a Running Container': kubernetes/000-pods/tasks/shell-into-a-container.md
+        - 'Environment Variables': kubernetes/000-pods/tasks/env-variables.md
+        - 'Command and Arguments': kubernetes/000-pods/tasks/define-command-and-args-for-container.md
+        - 'Scheduling':
+          - 'Scheduler': kubernetes/000-pods/tasks/scheduling/scheduler.md
+          - 'Assigning Pods to Nodes':
+            - 'Getting started': kubernetes/000-pods/tasks/scheduling/assigning-pods-to-nodes/getting-started.md
+            - 'Node Labels': kubernetes/000-pods/tasks/scheduling/assigning-pods-to-nodes/node-labels.md
+            - 'nodeSelector': kubernetes/000-pods/tasks/scheduling/assigning-pods-to-nodes/nodeSelector.md
+            - 'Affinity and anti-affinity': kubernetes/000-pods/tasks/scheduling/assigning-pods-to-nodes/affinity-and-anti-affinity.md
+            - 'nodeName': kubernetes/000-pods/tasks/scheduling/assigning-pods-to-nodes/nodeName.md
+            - 'Pod topology spread constraints': kubernetes/000-pods/tasks/scheduling/assigning-pods-to-nodes/pod-topology-spread-constraints.md
+            - 'Extras': kubernetes/000-pods/tasks/scheduling/assigning-pods-to-nodes/extras.md
+          - 'Pod Priority and Preemption': kubernetes/000-pods/tasks/scheduling/pod-priority-and-preemption.md
+        - 'Pod Networking': kubernetes/000-pods/networking.md
+        - 'Kubectl Commands': kubernetes/000-pods/kubectl-commands.md
+        - 'Extras': kubernetes/000-pods/extras.md
+      - 'Deployments':
+        - 'Getting started': kubernetes/000-deployments/getting-started.md
+        - 'Configure':
+          - 'Updating Deployment': kubernetes/000-deployments/tasks/updating.md
+          - 'Rolling Back a Deployment': kubernetes/000-deployments/tasks/rolling-back.md
+          - 'Scaling a Deployment': kubernetes/000-deployments/tasks/manual-scaling.md
+          - 'Rolling Update': kubernetes/000-deployments/tasks/rolling-update.md
+          - 'Images':
+            - 'Image names': kubernetes/000-deployments/tasks/container-images/image-names.md
+            - 'Image Pull Policy': kubernetes/000-deployments/tasks/container-images/image-pull-policy.md
+          - 'Resource Requests and Limits':
+            - 'Getting started': kubernetes/000-deployments/tasks/resource-requests-and-limits/getting-started.md
+            - 'How Kubernetes applies Resource Requests and Limits': kubernetes/000-deployments/tasks/resource-requests-and-limits/how-k8s-applies.md
+            - 'QoS': kubernetes/000-deployments/tasks/resource-requests-and-limits/qos.md
+        - 'Kubectl Commands': kubernetes/000-deployments/kubectl-commands.md
+        - 'Extras': kubernetes/000-deployments/extras.md
+      - 'ReplicaSets':
+        - 'Getting started': kubernetes/000-replicasets/getting-started.md
+      - 'DaemonSet':
+        - 'Getting started': kubernetes/000-daemonset/getting-started.md
+        - 'Configure':
+          - 'Rolling Update': kubernetes/000-daemonset/tasks/update.md
+          - 'Rolling Back a Deployment': kubernetes/000-daemonset/tasks/rollback.md
+        - 'Kubectl Commands': kubernetes/000-daemonset/kubectl-commands.md
+      - 'Jobs':
+        - 'Getting started': kubernetes/000-jobs/getting-started.md
+      - 'CronJobs':
+        - 'Getting started': kubernetes/000-cronjobs/getting-started.md
+      - 'Disruptions':
+        - 'Getting started': kubernetes/000-disruptions/getting-started.md
+        - 'Configure': kubernetes/000-disruptions/configure.md
+      - 'Autoscaling':
+        - 'Horizontal Pod Autoscaling': kubernetes/000-autoscaling/hpa/getting-started.md
+      - 'Networking':
+        - 'Getting started': kubernetes/000-networking/README.md
+        - 'CNI':
+          - 'Getting started': kubernetes/000-networking/000-cni/getting-started.md
+          - 'IPAM': kubernetes/000-networking/000-cni/ipam.md
+          - 'Extras': kubernetes/000-networking/000-cni/extras.md
+        - 'Services':
+          - 'Getting started': kubernetes/000-networking/000-services/getting-started.md
+          - 'ClusterIP': kubernetes/000-networking/000-services/clusterIP.md
+          - 'Headless': kubernetes/000-networking/000-services/headless.md
+          - 'NodePort': kubernetes/000-networking/000-services/nodeport.md
+          - 'LoadBalancer': kubernetes/000-networking/000-services/loadbalancer.md
+        - 'Endpoints and EndpointSlices':
+          - 'Getting started': kubernetes/000-networking/000-endpoints-and-endpoint-slices/getting-started.md
+          - 'Practice': kubernetes/000-networking/000-endpoints-and-endpoint-slices/practice.md
+        - 'DNS':
+          - 'Getting started': kubernetes/000-networking/000-dns/getting-started.md
+          - 'Configure':
+            - 'Pod DNS Policy': kubernetes/000-networking/000-dns/configure/pod-dns-policy.md
+            - 'Pod DNS Config': kubernetes/000-networking/000-dns/configure/pod-dns-config.md
+          - 'Extra': kubernetes/000-networking/000-dns/extra.md
+        - 'Ingress':
+          - 'Getting started': kubernetes/000-networking/000-ingress/getting-started.md
+          - 'Ingress Controller': kubernetes/000-networking/000-ingress/ingress-controller.md
+          - 'OpenStack @ IT': kubernetes/000-networking/000-ingress/it-openstack.md
+          - 'The Future of Ingress': kubernetes/000-networking/000-ingress/future-of-ingress.md
+        - 'Network Policy':
+          - 'Getting started': kubernetes/000-networking/000-network-policy/getting-started.md
+        - 'Extras':
+          - 'Service ClusterIP allocation': kubernetes/000-networking/000-extras/service-clusterip-allocation.md
+          - 'VirtualIP and Service Proxies': kubernetes/000-networking/000-extras/vip-and-service-proxies.md
+          - 'kube-proxy in iptables mode':
+            - 'Linux internals': kubernetes/000-networking/000-extras/kube-proxy-iptables-mode/iptables-chains.md
+            - 'iptables NAT control flow': kubernetes/000-networking/000-extras/kube-proxy-iptables-mode/iptables-nat-control-flow.md
+          - 'Routing':
+            - 'Getting started': kubernetes/000-networking/000-extras/routing/getting-started.md
+            - 'Calico': kubernetes/000-networking/000-extras/routing/calico.md
+            - 'OpenStack Magnum: Containers and Kubernetes': kubernetes/000-networking/000-extras/routing/it-openstack-magnum-k8s.md
+          - 'hostNetwork': kubernetes/000-networking/000-extras/host-network.md
+          - 'hostPort': kubernetes/000-networking/000-extras/host-port.md
+          - 'Session Affinity': kubernetes/000-networking/000-extras/session-affinity.md
+          - 'Service Mesh':
+            - 'Getting started': kubernetes/000-networking/000-extras/service-mesh/getting-started.md
+          - 'Configuration Best Practices': kubernetes/000-networking/000-extras/configuration-best-practices.md
+          - 'Notes': kubernetes/000-networking/000-extras/notes.md
+          - 'Reads': kubernetes/000-networking/000-extras/reads.md
+      - 'Storage':
+        - 'Volumes': kubernetes/000-storage/volumes.md
+        - 'Ephemeral':
+          - 'emptyDir': kubernetes/000-storage/ephemeral/emptyDir.md
+          - 'ConfigMap': kubernetes/000-storage/ephemeral/configmap.md
+          - 'Secret': kubernetes/000-storage/ephemeral/secret.md
+          - 'Downward API': kubernetes/000-storage/ephemeral/downward-api.md
+          - 'Generic Ephemeral Volumes': kubernetes/000-storage/ephemeral/generic-ephemeral-volumes.md
+        - 'subPath': kubernetes/000-storage/subpath.md
+        - 'hostPath': kubernetes/000-storage/hostPath.md
+        - 'Persistent Volumes':
+          - 'Getting started': kubernetes/000-storage/persistent-volumes/getting-started.md
+          - 'NFS': kubernetes/000-storage/persistent-volumes/nfs.md
+          - 'iSCSI': kubernetes/000-storage/persistent-volumes/iscsi.md
+          - 'PersistentVolume subsystem':
+            - 'Getting started': kubernetes/000-storage/persistent-volumes/PersistentVolume-subsystem/getting-started.md
+            - 'PersistentVolume': kubernetes/000-storage/persistent-volumes/PersistentVolume-subsystem/pv.md
+            - 'PersistentVolumeClaim': kubernetes/000-storage/persistent-volumes/PersistentVolume-subsystem/pvc.md
+            - 'StorageClass': kubernetes/000-storage/persistent-volumes/PersistentVolume-subsystem/storageclass.md
+            - 'Dynamic Volume Provisioning': kubernetes/000-storage/persistent-volumes/PersistentVolume-subsystem/dynamic-volume-provisioning.md
+          - 'Tasks':
+            - 'hostPath PV': kubernetes/000-storage/persistent-volumes/tasks/hostPath.md
+            - 'Local PV': kubernetes/000-storage/persistent-volumes/tasks/local.md
+            - 'OpenStack @ IT - Block Storage': kubernetes/000-storage/persistent-volumes/tasks/openstack-block-storage.md
+      - 'Configuration':
+        - 'ConfigMaps': kubernetes/000-configuration/configmaps.md
+        - 'Secrets': kubernetes/000-configuration/secrets.md

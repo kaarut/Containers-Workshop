@@ -1,0 +1,16 @@
+
+FROM golang:1.19.3-alpine3.16
+
+WORKDIR /app
+
+COPY go.mod ./
+COPY go.sum ./
+RUN go mod download
+
+COPY *.go ./
+
+RUN CGO_ENABLED=0 go build -o /cms-daq-simple-app
+
+EXPOSE 8080
+
+CMD ["/cms-daq-simple-app"]
