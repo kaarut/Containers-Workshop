@@ -1,11 +1,11 @@
 site_name: CMS DAQ Containers Workshop
 site_description: CMS DAQ Containers Workshop
 site_author: CMS DAQ
-site_url: https://cms-daq-containers-workshop.docs.cern.ch/
+site_url: https://kaarut.github.io/Containers-Workshop/
 
 repo_name: Containers Workshop
-repo_url: https://gitlab.cern.ch/cms-daq-sysadmins/containers-workshop
-edit_uri: 'blob/master/docs'
+repo_url: https://github.com/kaarut/Containers-Workshop/
+# edit_uri: 'blob/master/docs'
 
 theme:
   name: material
